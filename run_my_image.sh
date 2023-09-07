@@ -17,6 +17,7 @@ docker run -it \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     --env="XAUTHORITY=$XAUTH" \
     --volume="$XAUTH:$XAUTH" \
+    --volume="mantaray_xavier:mantaray_xavier" \
     --runtime=nvidia \
     my_melodic_image \
     bash
