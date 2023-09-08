@@ -15,7 +15,6 @@ then
     chmod a+r $XAUTH
 fi
 
-xhost +
 
 sudo docker run -it \
     --env="DISPLAY=$DISPLAY" \
@@ -28,7 +27,7 @@ sudo docker run -it \
     --mount type=bind,source="$(pwd)"/USCAUVSim,target=${CATKIN_WS}/src/USCAUVSim \
     --mount type=bind,source="$(pwd)"/USCAUVSim/scripts,target=/home/mantaray/scripts \
     --net=host \
-    auv:v1 \
+    auv:v0 \
     bash
     # --runtime=nvidia \
     #--privileged \
@@ -37,4 +36,3 @@ sudo docker run -it \
     #bash
 
 cd - 
-xhost -
