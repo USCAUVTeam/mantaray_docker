@@ -28,7 +28,6 @@ sudo docker run -it \
     --env="XAUTHORITY=$XAUTH" \
     --volume="$XAUTH:$XAUTH" \
     --net=host \
-    --runtime=nvidia \
     --privileged \
     auv:${tag} \
     bash
