@@ -13,3 +13,4 @@ WORKDIR /home/mantaray
 
 RUN echo "source /opt/ros/melodic/setup.bash" >> /home/mantaray/.bashrc && mkdir -p catkin_ws/src && cd catkin_ws && source /opt/ros/melodic/setup.bash && catkin_make && echo "source ~/catkin_ws/devel/setup.bash" >> /home/mantaray/.bashrc
 
+USER root
