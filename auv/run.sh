@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
+
 cd ~/mantaray_docker/auv
+
+sudo docker image ls | grep auv_sim 
+
+read -p 'tag: ' tag
+if [[ -z "$tag" ]]; then
+    echo "Setting tag to 0"
+    tag="0"
+fi
+echo "Running auv_sim:${tag}"
 
 XAUTH=/tmp/.docker.xauth
 CATKIN_WS=/home/mantaray/catkin_ws
@@ -28,7 +38,7 @@ sudo docker run -it \
     --mount type=bind,source="$(pwd)"/USCAUVSim,target=${CATKIN_WS}/src/USCAUVSim \
     --mount type=bind,source="$(pwd)"/USCAUVSim/scripts,target=/home/mantaray/scripts \
     --net=host \
-    auv:v1 \
+    auv_sim:$tag \
     bash
     # --runtime=nvidia \
     #--privileged \
