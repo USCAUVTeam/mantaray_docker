@@ -1,5 +1,6 @@
 FROM osrf/ros:melodic-desktop-full
 SHELL ["/bin/bash","-c"]
+
 RUN apt-get update
 
 # nvidia-container-runtime
