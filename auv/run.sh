@@ -15,11 +15,14 @@ then
     chmod a+r $XAUTH
 fi
 
+xhost +${HOSTNAME}
+
+export HOSTNAME=`HOSTNAME`
 
 sudo docker run -it \
-    --env="DISPLAY=$DISPLAY" \
+    --env="DISPLAY=host.docker.internal:0"\
     --env="QT_X11_NO_MITSHM=1" \
-    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+    --volume="/tmp/.X11-unix:/tmp/.X11-unix" \
     --env="XAUTHORITY=$XAUTH" \
     --volume="$XAUTH:$XAUTH" \
     --mount type=bind,source="$(pwd)"/mantaray_xavier,target=${CATKIN_WS}/src/mantaray_xavier \
@@ -36,3 +39,4 @@ sudo docker run -it \
     #bash
 
 cd - 
+xhost - ${HOSTNAME}
