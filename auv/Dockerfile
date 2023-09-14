@@ -14,8 +14,8 @@ RUN passwd -d mantaray
 USER mantaray
 WORKDIR /home/mantaray
 RUN sudo apt-get update && sudo apt -y install ros-melodic-uuv-simulator
-RUN sudo apt-get install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev vim
-
+RUN sudo apt-get install -y vim
+#RUN sudo apt-get install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev vim
 
 RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 
