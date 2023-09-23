@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-
-cd ~/mantaray_docker/auv
+cd /home/mantaray/mantaray_docker/auv
 
 sudo docker image ls | grep auv_sim 
 
@@ -38,13 +37,10 @@ sudo docker run -it \
     --mount type=bind,source="$(pwd)"/USCAUVSim,target=${CATKIN_WS}/src/USCAUVSim \
     --mount type=bind,source="$(pwd)"/USCAUVSim/scripts,target=/home/mantaray/scripts \
     --net=host \
+    --privileged \
+    --runtime=nvidia \
     auv_sim:$tag \
     bash
-    # --runtime=nvidia \
-    #--privileged \
-    #--gpus 'all,capabilities=utility' \
-    #auv:v0 \
-    #bash
 
 cd - 
 xhost -
