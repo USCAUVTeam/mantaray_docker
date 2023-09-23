@@ -5,4 +5,4 @@ if [[ -z "$tag" ]]; then
     tag="0"
 fi
 echo "Building to auv_sim:${tag}"
-sudo docker build -t auv_sim:$tag auv/.
+sudo docker build -t auv_sim:$tag linux/auv/.
