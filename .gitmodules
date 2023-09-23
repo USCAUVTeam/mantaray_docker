@@ -1,11 +1,11 @@
 [submodule "auv/mantaray_rpi"]
-	path = auv/mantaray_rpi
+	path = linux/auv/mantaray_rpi
 	url = git@github.com:USCAUVTeam/mantaray_rpi.git
 [submodule "auv/mantaray_xavier"]
-	path = auv/mantaray_xavier
+	path = linux/auv/mantaray_xavier
 	url = git@github.com:USCAUVTeam/mantaray_xavier.git
 [submodule "auv/USCAUVSim"]
-	path = auv/USCAUVSim
+	path = linux/auv/USCAUVSim
 	url = git@github.com:USCAUVTeam/USCAUVSim.git
 [submodule "xavier/mantaray_xavier"]
 	path = xavier/mantaray_xavier
