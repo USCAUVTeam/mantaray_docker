@@ -29,6 +29,7 @@ sudo docker run -it \
     --mount type=bind,source="$(pwd)"/mantaray_rpi,target=${CATKIN_WS}/src/mantaray_rpi \
     --mount type=bind,source="$(pwd)"/USCAUVSim,target=${CATKIN_WS}/src/USCAUVSim \
     --mount type=bind,source="$(pwd)"/USCAUVSim/scripts,target=/home/mantaray/scripts \
+    --mount type=bind,source="$(pwd)"/auv_ws,target=/home/mantaray/auv_ws \
     --net=host \
     auv:v0 \
     bash
