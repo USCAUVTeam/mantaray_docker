@@ -4,9 +4,6 @@
 [submodule "auv/mantaray_xavier"]
 	path = linux/auv/mantaray_xavier
 	url = git@github.com:USCAUVTeam/mantaray_xavier.git
-[submodule "auv/USCAUVSim"]
-	path = linux/auv/USCAUVSim
-	url = git@github.com:USCAUVTeam/USCAUVSim.git
 [submodule "xavier/mantaray_xavier"]
 	path = xavier/mantaray_xavier
 	url = git@github.com:USCAUVTeam/mantaray_xavier.git
