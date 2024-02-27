@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd /home/mantaray/mantaray_docker/auv
+cd /home/mantaray/mantaray_docker/linux/auv
 
 sudo docker image ls | grep auv_sim 
 
