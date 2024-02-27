@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd /home/mantaray/mantaray_docker/auv
+cd /home/mantaray/mantaray_docker/linux/auv
 
 sudo docker image ls | grep auv_sim 
 
@@ -12,6 +12,8 @@ echo "Running auv_sim:${tag}"
 
 XAUTH=/tmp/.docker.xauth
 CATKIN_WS=/home/mantaray/catkin_ws
+XHOST=":0"
+
 if [ ! -f $XAUTH ]
 then
     xauth_list=$(xauth nlist :0 | sed -e 's/^..../ffff/')
@@ -27,10 +29,10 @@ fi
 xhost +
 
 sudo docker run -it \
-    --env="DISPLAY=$DISPLAY" \
-    --env="QT_X11_NO_MITSHM=1" \
+    -e DISPLAY=$DISPLAY \
+    -e QT_X11_NO_MITSHM=1 \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-    --env="XAUTHORITY=$XAUTH" \
+    -e XAUTHORITY=$XAUTH \
     --volume="$XAUTH:$XAUTH" \
     --mount type=bind,source="$(pwd)"/mantaray_xavier,target=${CATKIN_WS}/src/mantaray_xavier \
     --mount type=bind,source="$(pwd)"/mantaray_rpi,target=${CATKIN_WS}/src/mantaray_rpi \
