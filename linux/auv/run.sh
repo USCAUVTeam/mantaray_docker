@@ -27,6 +27,7 @@ then
 fi
 
 xhost +
+#--mount type=bind,source="$(pwd)"/mantaray_rpi,target=${CATKIN_WS}/src/mantaray_rpi \
 
 sudo docker run -it \
     -e DISPLAY=$DISPLAY \
@@ -35,7 +36,6 @@ sudo docker run -it \
     -e XAUTHORITY=$XAUTH \
     --volume="$XAUTH:$XAUTH" \
     --mount type=bind,source="$(pwd)"/mantaray_xavier,target=${CATKIN_WS}/src/mantaray_xavier \
-    --mount type=bind,source="$(pwd)"/mantaray_rpi,target=${CATKIN_WS}/src/mantaray_rpi \
     --mount type=bind,source="$(pwd)"/USCAUVSim,target=${CATKIN_WS}/src/USCAUVSim \
     --mount type=bind,source="$(pwd)"/USCAUVSim/scripts,target=/home/mantaray/scripts \
     --net=host \

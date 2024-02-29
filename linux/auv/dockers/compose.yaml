@@ -1,0 +1,23 @@
+version: '3'
+services:
+  rpi:
+    build:
+      context: ./rpi
+  sim:
+    build:
+      context: ./sim
+      dockerfile: Dockerfile
+    command: /bin/bash -c "echo root && ls && cd scripts && ls && cat run_sim.sh && ./init.sh && source ~/.bashrc && ./run_sim.sh"
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - "/tmp/.X11-unix:/tmp/.X11-unix:rw"
+      - "${XAUTH:-/tmp/.docker.xauth}:${XAUTH:-/tmp/.docker.xauth}"
+      - "../mantaray_xavier:${CATKIN_WS:-/home/mantaray/catkin_ws}/src/mantaray_xavier"
+      - "../USCAUVSim:${CATKIN_WS:-/home/mantaray/catkin_ws}/src/USCAUVSim"
+      - "../USCAUVSim/scripts:/home/mantaray/scripts"
+    network_mode: host
+    privileged: true
+    runtime: nvidia
+
