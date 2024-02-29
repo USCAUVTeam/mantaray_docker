@@ -16,12 +16,15 @@ WORKDIR /home/mantaray
 RUN apt-get update && apt -y install ros-melodic-uuv-simulator
 RUN apt-get install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev vim
 
-RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+RUN apt-get update && sudo apt-get install -y doxygen
+
+RUN apt-get update && apt-get install libeigen3-dev && apt-get install libboost-all-dev
 
 USER mantaray
 
 RUN source /opt/ros/melodic/setup.bash && mkdir -p catkin_ws/src && cd catkin_ws && catkin_make
 
 RUN echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 
 CMD ["bash"]

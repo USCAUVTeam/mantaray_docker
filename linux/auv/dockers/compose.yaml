@@ -3,6 +3,13 @@ services:
   rpi:
     build:
       context: ./rpi
+      dockerfile: Dockerfile
+    command: /bin/bash -c "tail -f /dev/null"
+    volumes:
+            - "../mantaray_rpi:/home/mantaray/catkin_ws/src/mantaray_rpi"
+            - "../control-toolbox:/home/mantaray/catkin_ws/src/control-toolbox"
+            - "../kindr:/home/mantaray/catkin_ws/src/kindr"
+    network_mode: host
   sim:
     build:
       context: ./sim
