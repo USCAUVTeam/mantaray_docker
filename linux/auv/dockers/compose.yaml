@@ -7,10 +7,12 @@ services:
     build:
       context: ./sim
       dockerfile: Dockerfile
-    command: /bin/bash -c "echo root && ls && cd scripts && ls && cat run_sim.sh && ./init.sh && source ~/.bashrc && ./run_sim.sh"
+    command: /bin/bash -c "cd scripts && ./init.sh && ./run_sim.sh; tail -f /dev/null"
     environment:
       - DISPLAY=${DISPLAY}
       - QT_X11_NO_MITSHM=1
+      - XAUTHORITY=/tmp/.docker.xauth
+      - NVIDIA_VISIBLE_DEVICES=all
     volumes:
       - "/tmp/.X11-unix:/tmp/.X11-unix:rw"
       - "${XAUTH:-/tmp/.docker.xauth}:${XAUTH:-/tmp/.docker.xauth}"
@@ -19,5 +21,7 @@ services:
       - "../USCAUVSim/scripts:/home/mantaray/scripts"
     network_mode: host
     privileged: true
+    stdin_open: true
+    tty: true
     runtime: nvidia
 
