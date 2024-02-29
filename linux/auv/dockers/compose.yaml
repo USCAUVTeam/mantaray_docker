@@ -4,7 +4,7 @@ services:
     build:
       context: ./rpi
       dockerfile: Dockerfile
-    command: /bin/bash -c "cd catkin_ws && rm -rf build devel && catkin build -DCMAKE_BUILD_TYPE=Release && tail -f /dev/null"
+    command: /bin/bash -c "cd catkin_ws && rm -rf build devel && catkin build -DCMAKE_BUILD_TYPE=Release && source devel/setup.bash && tail -f /dev/null"
     
     volumes:
             - "../mantaray_rpi:/home/mantaray/catkin_ws/src/mantaray_rpi"
