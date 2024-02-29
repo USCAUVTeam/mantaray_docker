@@ -16,9 +16,10 @@ WORKDIR /home/mantaray
 RUN apt-get update && apt -y install ros-melodic-uuv-simulator
 RUN apt-get install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev vim
 
-RUN apt-get update && sudo apt-get install -y doxygen
+RUN apt-get update && sudo apt-get install -y doxygen libeigen3-dev libboost-all-dev python3-catkin-tools ros-melodic-robot-localization ros-melodic-pid python3-pip python3-setuptools
 
-RUN apt-get update && apt-get install libeigen3-dev && apt-get install libboost-all-dev
+RUN pip3 install --upgrade --ignore-installed pip setuptools
+RUN pip3 install roslibpy keyboard filterpy numpy pandas 
 
 USER mantaray
 

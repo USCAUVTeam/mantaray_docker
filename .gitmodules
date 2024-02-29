@@ -13,3 +13,6 @@
 [submodule "linux/auv/control-toolbox"]
 	path = linux/auv/control-toolbox
 	url = git@github.com:ethz-adrl/control-toolbox.git
+[submodule "linux/auv/kindr"]
+	path = linux/auv/kindr
+	url = https://github.com/ANYbotics/kindr.git
