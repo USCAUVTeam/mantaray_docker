@@ -1,4 +1,4 @@
-FROM osrf/ros:melodic-desktop-full
+FROM arm64v8/ros:melodic
 SHELL ["/bin/bash","-c"]
 RUN apt-get update
 RUN apt-get -y install xauth 
@@ -12,10 +12,12 @@ RUN apt-get update && sudo apt-get install -y doxygen libeigen3-dev libboost-all
 
 RUN pip3 install --upgrade --ignore-installed pip setuptools
 RUN pip3 install roslibpy keyboard filterpy numpy pandas empy==3.3.4
+
+RUN apt-get update && apt-get install -y ros-melodic-tf
  
 USER mantaray
 
-RUN source /opt/ros/melodic/setup.bash && mkdir -p catkin_ws/src && cd catkin_ws && catkin_make
+RUN source /opt/ros/melodic/setup.bash && mkdir -p catkin_ws/src && cd catkin_ws && catkin build -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3
 
 RUN echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc

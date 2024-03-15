@@ -12,9 +12,12 @@ echo "Running auv_real:${tag}"
 
 CATKIN_WS=/home/mantaray/catkin_ws
 
+    #--mount type=bind,source="$(pwd)"/mantaray_rpi,target=${CATKIN_WS}/src/mantaray_rpi \
 sudo docker run -it \
     --mount type=bind,source="$(pwd)"/mantaray_xavier,target=${CATKIN_WS}/src/mantaray_xavier \
-    --mount type=bind,source="$(pwd)"/mantaray_rpi,target=$(CATKIN_WS)/src/mantaray_rpi \
+    --mount type=bind,source="$(pwd)"/control-toolbox,target=${CATKIN_WS}/src/control-toolbox \
+    --mount type=bind,source="$(pwd)"/kindr,target=${CATKIN_WS}/src/kindr \
+    --mount type=bind,source="$(pwd)"/scripts,target=/home/mantaray/scripts \
     --net=host \
     --privileged \
     auv_real:$tag \
