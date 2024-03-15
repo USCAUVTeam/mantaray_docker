@@ -1,0 +1,8 @@
+First, run docker compose build
+Then, run docker compose up
+Wait until the docker compose finishes. This is usually when the container for the rpi finishes running catkin build. 
+Next, run docker ps. This should output all of the running docker containers. Copy the container id of the image dockers-rpi
+Enter the docker container by running docker exec -it <container id> bash
+This will put you in a bash terminal of the container. 
+Now, cd into catkin_ws and run source devel/setup.bash
+This will let you run roslaunch mantaray_rpi mantaray.launch

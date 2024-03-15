@@ -1,0 +1,18 @@
+[submodule "docker_compose/mantaray_xavier"]
+	path = linux/docker_compose/mantaray_xavier
+	url = git@github.com:USCAUVTeam/mantaray_xavier.git
+[submodule "docker_compose/USCAUVSim"]
+	path = linux/docker_compose/USCAUVSim
+	url = git@github.com:USCAUVTeam/USCAUVSim.git
+[submodule "xavier/AUVUtils"]
+	path = xavier/AUVUtils
+	url = git@github.com:USCAUVTeam/AUVUtils.git
+[submodule "linux/docker_compose/mantaray_rpi"]
+	path = linux/docker_compose/mantaray_rpi
+	url = git@github.com:USCAUVTeam/mantaray_rpi.git
+[submodule "linux/docker_compose/control-toolbox"]
+	path = linux/docker_compose/control-toolbox
+	url = git@github.com:ethz-adrl/control-toolbox.git
+[submodule "linux/docker_compose/kindr"]
+	path = linux/docker_compose/kindr
+	url = https://github.com/ANYbotics/kindr.git
