@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd /home/mantaray/mantaray_docker/
+cd /home/${USER}/mantaray_docker/
 read -p 'tag: ' tag
 if [[ -z "$tag" ]]; then
     echo "Setting tag to 0"
