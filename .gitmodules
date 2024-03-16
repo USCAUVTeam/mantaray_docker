@@ -10,6 +10,3 @@
 [submodule "linux/docker_compose/USCAUVSim"]
 	path = linux/docker_compose/USCAUVSim
 	url = git@github.com:USCAUVTeam/USCAUVSim.git
-[submodule "linux/docker_compose/mantaray_xavier"]
-	path = linux/docker_compose/mantaray_xavier
-	url = git@github.com:USCAUVTeam/mantaray_xavier.git
