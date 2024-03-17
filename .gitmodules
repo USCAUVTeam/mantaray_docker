@@ -1,15 +1,15 @@
 [submodule "auv/mantaray_xavier"]
-	path = linux/auv/mantaray_xavier
+	path = rpi/auv/mantaray_xavier
 	url = git@github.com:USCAUVTeam/mantaray_xavier.git
 [submodule "xavier/AUVUtils"]
 	path = xavier/AUVUtils
 	url = git@github.com:USCAUVTeam/AUVUtils.git
 [submodule "linux/auv/mantaray_rpi"]
-	path = linux/auv/mantaray_rpi
+	path = rpi/auv/mantaray_rpi
 	url = git@github.com:USCAUVTeam/mantaray_rpi.git
 [submodule "linux/auv/control-toolbox"]
-	path = linux/auv/control-toolbox
+	path = rpi/auv/control-toolbox
 	url = git@github.com:ethz-adrl/control-toolbox.git
 [submodule "linux/auv/kindr"]
-	path = linux/auv/kindr
+	path = rpi/auv/kindr
 	url = https://github.com/ANYbotics/kindr.git
