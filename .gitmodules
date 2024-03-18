@@ -13,3 +13,9 @@
 [submodule "linux/docker_compose/mantaray_xavier"]
 	path = linux/docker_compose/mantaray_xavier
 	url = git@github.com:USCAUVTeam/mantaray_xavier.git
+[submodule "linux/docker_compose/AUVUtils"]
+	path = linux/docker_compose/AUVUtils
+	url = git@github.com:USCAUVTeam/AUVUtils.git
+[submodule "linux/docker_compose/mantaray_hardware"]
+	path = linux/docker_compose/mantaray_hardware
+	url = git@github.com:USCAUVTeam/mantaray_hardware.git

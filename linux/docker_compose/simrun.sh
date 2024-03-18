@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd /home/mantaray/mantaray_docker/linux/docker_compose
+cd /home/${USER}/mantaray_docker/linux/docker_compose
 
 sudo docker image ls | grep auv_sim 
 
@@ -12,24 +12,17 @@ echo "Running auv_sim:${tag}"
 
 XAUTH=/tmp/.docker.xauth
 CATKIN_WS=/home/mantaray/catkin_ws
-XHOST=":0"
+XHOST=":1"
 
-if [ ! -f $XAUTH ]
-then
-    xauth_list=$(xauth nlist :0 | sed -e 's/^..../ffff/')
-    if [ ! -z "$xauth_list" ]
-    then
-        echo $xauth_list | xauth -f $XAUTH nmerge -
-    else
-        touch $XAUTH
-    fi
-    sudo chmod a+rwx $XAUTH
-fi
-
+sudo touch /tmp/.docker.xauth
+sudo chmod a+rwx /tmp/.docker.xauth
+# Generate the X11 authorization key
+xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f /tmp/.docker.xauth nmerge -
 xhost +
 #--mount type=bind,source="$(pwd)"/mantaray_rpi,target=${CATKIN_WS}/src/mantaray_rpi \
 
 sudo docker run -it \
+    --name "dockers-sim-1" \
     -e DISPLAY=$DISPLAY \
     -e QT_X11_NO_MITSHM=1 \
     --gpus all \
@@ -47,3 +40,4 @@ sudo docker run -it \
 
 cd - 
 xhost -
+docker rm dockers-sim-1

@@ -12,7 +12,7 @@ RUN apt-get update && sudo apt-get install -y doxygen libeigen3-dev libboost-all
 RUN pip3 install --upgrade --ignore-installed pip setuptools
 RUN pip3 install roslibpy keyboard filterpy numpy pandas empy==3.3.4
  
-RUN apt-get update && apt-get install ros-melodic-pid vim -y
+RUN apt-get update && apt-get install -y ros-melodic-pid vim tmux
 
 USER mantaray
 
