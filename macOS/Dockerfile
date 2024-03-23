@@ -11,10 +11,14 @@ RUN echo "if [ -f ~/.bashrc ]; then source ~/.bashrc; fi" >> /home/mantaray/.pro
 RUN echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc && echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 
 COPY start_tmux.sh /start_tmux.sh
-RUN chmod +x /start_tmux.sh && chown mantaray:mantaray /start_tmux.sh
+COPY prepare_environment.sh /auv_init.sh
+RUN chmod +x /start_tmux.sh /auv_init.sh && chown mantaray:mantaray /start_tmux.sh /auv_init.sh
 
 USER mantaray
 
 RUN source /opt/ros/melodic/setup.bash && mkdir -p catkin_ws/src && cd catkin_ws && catkin_make
 
-CMD ["/start_tmux.sh", "&& bash"]
+RUN echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+
+CMD ["/auv_init.sh", "&& /bin/bash"]
