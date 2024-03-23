@@ -1,9 +1,3 @@
-[submodule "auv/mantaray_rpi"]
-	path = auv/mantaray_rpi
-	url = git@github.com:USCAUVTeam/mantaray_rpi.git
-[submodule "auv/mantaray_xavier"]
-	path = auv/mantaray_xavier
-	url = git@github.com:USCAUVTeam/mantaray_xavier.git
-[submodule "auv/USCAUVSim"]
-	path = auv/USCAUVSim
-	url = git@github.com:USCAUVTeam/USCAUVSim.git
+[submodule "ros_tutorials"]
+	path = ros_tutorials
+	url = git@github.com:ros/ros_tutorials.git
