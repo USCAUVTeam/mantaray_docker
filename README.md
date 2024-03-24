@@ -8,9 +8,9 @@ Steps for MacOS:
 
    ```
    cd ~
-   git clone --recursive git@github.com:USCAUVTeam/mantaray_docker.git
+   git clone git@github.com:USCAUVTeam/mantaray_docker.git
    cd mantaray_docker
-   git checkout ros_tutorial
+   git checkout ros_totorial
    ```
 2. Modify files so that it can build properly later on
 
