@@ -28,9 +28,10 @@ Steps for MacOS:
    cd ~/mantaray_docker
    chmod +x ./macOS/*
    ```
-4. Build the docker image:
+4. Pull the docker image and then Build the docker image:
 
    ```
+   sudo docker pull ros:melodic
    cd ~/mantaray_docker/macOS
    ./build.sh
    ```
