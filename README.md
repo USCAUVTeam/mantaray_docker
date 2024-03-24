@@ -15,6 +15,9 @@ Steps for MacOS:
 2. Modify files so that it can build properly later on
 
    ```
+   cd ~/mantaray_docker
+   git submodule init
+   git submodule update --recursive
    cd ~/mantaray_docker/ros_tutorials
    git checkout melodic-devel
    rm -rf turtlesim
@@ -23,7 +26,7 @@ Steps for MacOS:
 
    ```
    cd ~/mantaray_docker
-   chmod +x 
+   chmod +x ./macOS/*
    ```
 4. Build the docker image:
 
