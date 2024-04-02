@@ -1,0 +1,1 @@
+RUN pip3 install Adafruit-Blinka adafruit-circuitpython-pca9685 rospkg netifaces RPi.GPIO

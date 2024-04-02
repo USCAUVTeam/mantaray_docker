@@ -1,25 +1,28 @@
 #!/usr/bin/env bash
 cd /home/mantaray/mantaray_docker/linux/docker_compose
 
-sudo docker image ls | grep auv_real 
+sudo docker image ls | grep auv_rpi
 
 read -p 'tag: ' tag
 if [[ -z "$tag" ]]; then
     echo "Setting tag to 0"
     tag="0"
 fi
-echo "Running auv_real:${tag}"
+echo "Running auv_rpi:${tag}"
 
 CATKIN_WS=/home/mantaray/catkin_ws
 
 sudo docker run -it \
     --mount type=bind,source="$(pwd)"/control-toolbox,target=${CATKIN_WS}/src/control-toolbox \
-    --mount type=bind,source="$(pwd)"/mantaray_rpi,target=${CATKIN_WS}/src/mantaray_rpi \
+    --mount type=bind,source="$(pwd)"/mantaray_xavier,target=${CATKIN_WS}/src/mantaray_xavier \
     --mount type=bind,source="$(pwd)"/kindr,target=${CATKIN_WS}/src/kindr \
-    --mount type=bind,source="$(pwd)"/scripts,target=/home/mantaray/scripts \
+    --mount type=bind,source="$(pwd)"/mantaray_hardware,target=${CATKIN_WS}/src/mantaray_hardware \
+    --mount type=bind,source="$(pwd)"/AUVUtils,target=${CATKIN_WS}/src/AUVUtils \
+    --mount type=bind,source="$(pwd)"/mantaray_xavier/docker_scripts,target=/home/mantaray/scripts \
     --net=host \
+    --device=/dev/ttyACM0 \
     --privileged \
-    auv_real:$tag \
+    auv_rpi:$tag \
     bash
 
 cd - 
