@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd /home/mantaray/mantaray_docker/linux/docker_compose
+cd /home/mantaray/mantaray_docker/linux/src
 
 sudo docker image ls | grep auv_rpi
 

@@ -1,21 +1,24 @@
-[submodule "linux/docker_compose/mantaray_rpi"]
-	path = linux/docker_compose/mantaray_rpi
+[submodule "linux/src/mantaray_rpi"]
+	path = linux/src/mantaray_rpi
 	url = git@github.com:USCAUVTeam/mantaray_rpi.git
-[submodule "linux/docker_compose/control-toolbox"]
-	path = linux/docker_compose/control-toolbox
+[submodule "linux/src/control-toolbox"]
+	path = linux/src/control-toolbox
 	url = git@github.com:ethz-adrl/control-toolbox.git
-[submodule "linux/docker_compose/kindr"]
-	path = linux/docker_compose/kindr
+[submodule "linux/src/kindr"]
+	path = linux/src/kindr
 	url = git@github.com:ANYbotics/kindr.git
-[submodule "linux/docker_compose/USCAUVSim"]
-	path = linux/docker_compose/USCAUVSim
+[submodule "linux/src/USCAUVSim"]
+	path = linux/src/USCAUVSim
 	url = git@github.com:USCAUVTeam/USCAUVSim.git
-[submodule "linux/docker_compose/mantaray_xavier"]
-	path = linux/docker_compose/mantaray_xavier
+[submodule "linux/src/mantaray_xavier"]
+	path = linux/src/mantaray_xavier
 	url = git@github.com:USCAUVTeam/mantaray_xavier.git
-[submodule "linux/docker_compose/AUVUtils"]
-	path = linux/docker_compose/AUVUtils
+[submodule "linux/src/AUVUtils"]
+	path = linux/src/AUVUtils
 	url = git@github.com:USCAUVTeam/AUVUtils.git
-[submodule "linux/docker_compose/mantaray_hardware"]
-	path = linux/docker_compose/mantaray_hardware
+[submodule "linux/src/mantaray_hardware"]
+	path = linux/src/mantaray_hardware
 	url = git@github.com:USCAUVTeam/mantaray_hardware.git
+[submodule "linux/src/AUVUtils"]
+	path = linux/src/AUVUtils
+	url = git@github.com:USCAUVTeam/AUVUtils.git

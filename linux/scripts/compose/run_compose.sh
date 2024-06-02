@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 xhost +
-cd ~/mantaray_docker/linux/docker_compose/dockers
+cd ~/mantaray_docker/linux/dockers
 docker compose up
 xhost -

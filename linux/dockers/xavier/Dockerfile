@@ -1,4 +1,4 @@
-FROM osrf/ros:melodic-desktop-full
+FROM arm64v8/ros:melodic
 SHELL ["/bin/bash","-c"]
 RUN apt-get update
 

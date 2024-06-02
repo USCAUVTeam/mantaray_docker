@@ -5,6 +5,6 @@ if [[ -z "$tag" ]]; then
     echo "Setting tag to 0"
     tag="0"
 fi
-echo "Building to auv_rpi:${tag}"
-sudo docker build -t auv_rpi:$tag linux/docker_compose/dockers/final_rpi
+echo "Building to auv_xavier:${tag}"
+sudo docker build -t auv_xavier:$tag linux/dockers/xavier
 cd -
