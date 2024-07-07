@@ -1,21 +1,27 @@
 [submodule "linux/src/mantaray_rpi"]
 	path = linux/src/mantaray_rpi
 	url = git@github.com:USCAUVTeam/mantaray_rpi.git
+	branch = main 
 [submodule "linux/src/control-toolbox"]
 	path = linux/src/control-toolbox
 	url = git@github.com:ethz-adrl/control-toolbox.git
+	branch = v3.0.2 
 [submodule "linux/src/kindr"]
 	path = linux/src/kindr
 	url = git@github.com:ANYbotics/kindr.git
+	branch = master
 [submodule "linux/src/USCAUVSim"]
 	path = linux/src/USCAUVSim
 	url = git@github.com:USCAUVTeam/USCAUVSim.git
+	branch = master
 [submodule "linux/src/mantaray_xavier"]
 	path = linux/src/mantaray_xavier
 	url = git@github.com:USCAUVTeam/mantaray_xavier.git
+	branch = 2/15/2024 
 [submodule "linux/src/mantaray_hardware"]
 	path = linux/src/mantaray_hardware
 	url = git@github.com:USCAUVTeam/mantaray_hardware.git
+	branch = master
 [submodule "linux/src/AUVUtils"]
 	path = linux/src/AUVUtils
 	url = git@github.com:USCAUVTeam/AUVUtils.git
